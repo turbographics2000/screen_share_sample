@@ -7,6 +7,9 @@ navigator.mediaDevices.enumerateDevices().then(devices => {
     })
 });
 btnStart.onclick = evt => {
+    if(vid.srcObject) {
+        vid.srcObject.getTracks().forEach(track => track.end());
+    }
     if (['screen', 'window'].includes(captureSource.value)) {
         if (window.chrome) {
             chrome.runtime.sendMessage('gmmpnajlmiejobjejmahldpgmcpfpnin', { screenShare: [captureSource.value] }, ({ streamId }) => {
