@@ -1,5 +1,5 @@
 btnStart.onclick = evt => {
-    chrome.runtime.sendMessage('kpbidbdboieeimkoeabnpdpjhgglmnig', { screenShare: true }, ({ streamId }) => {
+    chrome.runtime.sendMessage('gmmpnajlmiejobjejmahldpgmcpfpnin', { screenShare: true }, ({ streamId }) => {
         if (streamId) {
             navigator.mediaDevices.getUserMedia({
                 video: {
