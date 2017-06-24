@@ -8,7 +8,7 @@
         ]
     },
     "externally_connectable": {
-        "matches": ["https://turbographics2000.github.io/screen_share_sample/*"]
+        "matches": ["https://turbographics2000.github.io/*"]
     },
     "permissions": [
         "desktopCapture"
