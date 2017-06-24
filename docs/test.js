@@ -8,7 +8,7 @@ navigator.mediaDevices.enumerateDevices().then(devices => {
 });
 btnStart.onclick = evt => {
     if(vid.srcObject) {
-        vid.srcObject.getTracks().forEach(track => track.end());
+        vid.srcObject.getTracks().forEach(track => track.stop());
     }
     if (['screen', 'window'].includes(captureSource.value)) {
         if (window.chrome) {
