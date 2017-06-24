@@ -1,0 +1,16 @@
+{
+    "name": "ScreenShare",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "background": {
+        "scripts": [
+            "bg.js"
+        ]
+    },
+    "externally_connectable": {
+        "matches": ["http://127.0.0.1:*/*"]
+    },
+    "permissions": [
+        "desktopCapture"
+    ]
+}
