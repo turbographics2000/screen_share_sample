@@ -21,6 +21,6 @@ btnStart.onclick = evt => {
             },
         }).then(stream => {
             vid.srcObject = stream;
-        })
+        });
     }
 };
