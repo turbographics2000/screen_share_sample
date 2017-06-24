@@ -1,4 +1,4 @@
-chrome.runtime.sendMessage('kpbidbdboieeimkoeabnpdpjhgglmnig', { screenShare: true }, res => {
+chrome.runtime.sendMessage('kpbidbdboieeimkoeabnpdpjhgglmnig', { screenShare: true }, ({ streamId }) => {
     if (streamId) {
         navigator.mediaDevices.getUserMedia({
             video: {
