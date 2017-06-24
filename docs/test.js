@@ -1,26 +1,44 @@
+navigator.mediaDevices.enumerateDevices().then(devices => {
+    devices.filter(device => device.kind === 'videoinput').forEach(device => {
+        var opt = document.createElement('option');
+        opt.value = device.deviceId;
+        opt.textContent = `[WebCam] ${device.name}`;
+        captureSource.appendChild(opt);
+    })
+});
 btnStart.onclick = evt => {
-    if (window.chrome) {
-        chrome.runtime.sendMessage('gmmpnajlmiejobjejmahldpgmcpfpnin', { screenShare: [captureSource.value] }, ({ streamId }) => {
-            if (streamId) {
-                navigator.mediaDevices.getUserMedia({
-                    video: {
-                        mandatory: {
-                            chromeMediaSource: 'desktop',
-                            chromeMediaSourceId: streamId
+    if (['screen', 'window'].includes(captureSource.value)) {
+        if (window.chrome) {
+            chrome.runtime.sendMessage('gmmpnajlmiejobjejmahldpgmcpfpnin', { screenShare: [captureSource.value] }, ({ streamId }) => {
+                if (streamId) {
+                    gum({
+                        video: {
+                            mandatory: {
+                                chromeMediaSource: 'desktop',
+                                chromeMediaSourceId: streamId
+                            }
                         }
-                    }
-                }).then(stream => {
-                    vid.srcObject = stream;
-                });
-            }
-        });
-    } else if (typeof InstallTrigger !== 'undefined') {
-        navigator.mediaDevices.getUserMedia({
+                    });
+                }
+            });
+        } else if (typeof InstallTrigger !== 'undefined') {
+            gum({
+                video: {
+                    mediaSource: captureSource.value // 'window', 'application'
+                }
+            });
+        }
+    } else {
+        gum({
             video: {
-                mediaSource: captureSource.value // 'window', 'application'
-            },
-        }).then(stream => {
-            vid.srcObject = stream;
-        });
+                deviceId: captureSource.value
+            }
+        })
     }
 };
+
+function gum(constraints) {
+    navigator.mediaDevices.getUserMedia(constraints).then(stream => {
+        vid.srcObject = stream;
+    });
+}
