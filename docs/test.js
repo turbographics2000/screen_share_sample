@@ -2,7 +2,7 @@ navigator.mediaDevices.enumerateDevices().then(devices => {
     devices.filter(device => device.kind === 'videoinput').forEach(device => {
         var opt = document.createElement('option');
         opt.value = device.deviceId;
-        opt.textContent = `[WebCam] ${device.name}`;
+        opt.textContent = `[WebCam] ${device.label}`;
         captureSource.appendChild(opt);
     })
 });
