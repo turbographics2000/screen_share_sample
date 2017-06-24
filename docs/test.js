@@ -1,6 +1,6 @@
 btnStart.onclick = evt => {
     if (window.chrome) {
-        chrome.runtime.sendMessage('gmmpnajlmiejobjejmahldpgmcpfpnin', { screenShare: ['window'] }, ({ streamId }) => {
+        chrome.runtime.sendMessage('gmmpnajlmiejobjejmahldpgmcpfpnin', { screenShare: [captureSource.value] }, ({ streamId }) => {
             if (streamId) {
                 navigator.mediaDevices.getUserMedia({
                     video: {
@@ -17,7 +17,7 @@ btnStart.onclick = evt => {
     } else if (typeof InstallTrigger !== 'undefined') {
         navigator.mediaDevices.getUserMedia({
             video: {
-                mediaSource: 'screen' // 'window', 'application'
+                mediaSource: captureSource.value // 'window', 'application'
             },
         }).then(stream => {
             vid.srcObject = stream;

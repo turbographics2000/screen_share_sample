@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        <video id="vid" autoplay></video>
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div>
+        <select id="captureSource">
+            <option value="webcam">Webカメラ</option>
+            <option value="screen">スクリーン</option>
+            <option value="window">ウィンドウ</option>
+        </select>
         <button id="btnStart">start</button>
-        <script src="test.js"></script>
-    </body>
+    </div>
+    <video id="vid" autoplay></video>
+    <script src="test.js"></script>
+</body>
+
 </html>
