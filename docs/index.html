@@ -6,8 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        button {
-            padding: 2px;
+        .list-container>button {
+            padding: 0px;
+            float: left;
         }
 
         .list-box {
@@ -20,6 +21,10 @@
             border: 1px solid black;
             display: inline-block;
         }
+        #captureSource {
+            position: absolute;
+            top: -10000px;
+        }
     </style>
 </head>
 
@@ -29,18 +34,18 @@
             <div>シーン</div>
             <div id="sceneList" class="list-box"></div>
             <div>
-                <button><img src="ic_add_black_18px.svg"></button>
-                <button><img src="ic_remove_black_18px.svg"></button>
+                <button id="btnAddScene"><img src="ic_add_black_18px.svg"></button>
+                <button id="btnRemoveScene"><img src="ic_remove_black_18px.svg"></button>
             </div>
         </div>
         <div style="width: 138px; border:1px solid black;" class="list-container">
             <div>ソース</div>
             <div id="sceneList" class="list-box"></div>
             <div>
-                <button><img src="ic_add_black_18px.svg"></button>
-                <button><img src="ic_remove_black_18px.svg"></button>
-                <button><img src="ic_keyboard_arrow_up_black_18px.svg"></button>
-                <button><img src="ic_keyboard_arrow_down_black_18px.svg"></button>
+                <button id="btnAddSrc"><img src="ic_add_black_18px.svg"></button>
+                <button id="btnRemoveSrc"><img src="ic_remove_black_18px.svg"></button>
+                <button id="btnUpSrc"><img src="ic_keyboard_arrow_up_black_18px.svg"></button>
+                <button id="btnDownSrc"><img src="ic_keyboard_arrow_down_black_18px.svg"></button>
             </div>
         </div>
         <div style="width: 138px; border:1px solid black;" class="list-container">
