@@ -15,6 +15,7 @@ btnAddSrc.onclick = evt => {
         var btnRect = btnAddSrc.getBoundingClientRect();
         captureSource.style.display = '';
         var listRect = captureSource.getBoundingClientRect();
+        captureSource.style.left = btnRect.left + 'px';
         if (btnRect.top - listRect.height - 2) {
             captureSource.style.top = (btnRect.bottom + 2) + 'px';
         } else {
