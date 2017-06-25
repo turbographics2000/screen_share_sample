@@ -21,6 +21,7 @@
             border: 1px solid black;
             display: inline-block;
         }
+
         #captureSource {
             position: absolute;
             top: -10000px;
@@ -56,13 +57,10 @@
             <button>終了</button>
         </div>
     </div>
-    <div>
-        <select id="captureSource" multiple>
-            <option value="screen">スクリーン</option>
-            <option value="window">ウィンドウ</option>
-        </select>
-        <button id="btnStart">start</button>
-    </div>
+    <select id="captureSource" multiple>
+        <option value="screen">スクリーン</option>
+        <option value="window">ウィンドウ</option>
+    </select>
     <video id="vid" autoplay></video>
     <script src="test.js"></script>
 </body>
