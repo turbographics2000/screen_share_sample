@@ -5,6 +5,13 @@ var currentSceneIdx = 0;
 btnAddSrc.onclick = evt => {
     captureSource.style.top = '-10000px';
     captureSource.innerHTML = '';
+    var items = { screen: 'スクリーン', window: 'ウィンドウ' };
+    Object.keys(items).forEach(key => {
+        var opt = document.createElement('option');
+        opt.value = key;
+        opt.textContent = items[key];
+        captureSource.appendChild(opt);
+    });
     navigator.mediaDevices.enumerateDevices().then(devices => {
         devices.filter(device => device.kind === 'videoinput').forEach(device => {
             var opt = document.createElement('option');
