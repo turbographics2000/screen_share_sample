@@ -6,6 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        body::after {
+            position: absolute;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            z-index: -1;
+            content: url(ic_add_white_18px.svg) url(ic_remove_white_18px.svg) url(ic_keyboard_arrow_up_white_18px.svg) url(ic_keyboard_arrow_up_white_18px.svg) url(ic_add_black_18px.svg) url(ic_remove_black_18px.svg) url(ic_keyboard_arrow_up_black_18px.svg) url(ic_keyboard_arrow_up_black_18px.svg);
+        }
+
         .list-container button {
             display: block;
             width: 20px;
@@ -20,35 +29,45 @@
         .list-container button:hover {
             background-color: white;
         }
+
         .list-container button {
             background-position: center;
             background-size: 18px 18px;
             background-repeat: no-repeat;
         }
+
         .list-container button:hover {
             background: white;
         }
+
         button.add {
             background-image: url(ic_add_white_18px.svg);
         }
+
         button.remove {
             background-image: url(ic_remove_white_18px.svg);
         }
+
         button.up {
             background-image: url(ic_keyboard_arrow_up_white_18px.svg);
         }
+
         button.down {
             background-image: url(ic_keyboard_arrow_down_white_18px.svg);
         }
+
         button:hover.add {
             background-image: url(ic_add_black_18px.svg);
         }
+
         button:hover.remove {
             background-image: url(ic_remove_black_18px.svg);
         }
+
         button:hover.up {
             background-image: url(ic_keyboard_arrow_up_black_18px.svg);
         }
+
         button:hover.down {
             background-image: url(ic_keyboard_arrow_down_black_18px.svg);
         }
