@@ -9,9 +9,46 @@
         .list-container button {
             padding: 0px;
             float: left;
-            background-color:black;
+            background-color: #222;
             border: 0;
         }
+
+        .list-container button:hover {
+            background-color: white;
+        }
+        .list-container button {
+            background-position: center;
+            background-size: 18px 18px;
+            background-repeat: no-repeat;
+        }
+        .list-container button:hover {
+            background: white;
+        }
+        button .add {
+            background-image: url(ic_add_white_18px.svg);
+        }
+        button .remove {
+            background-image: url(ic_remove_white_18px.svg);
+        }
+        button .up {
+            background-image: url(ic_keyboard_arrow_up_white_18px.svg);
+        }
+        button .down {
+            background-image: url(ic_keyboard_arrow_down_white_18px.svg);
+        }
+        button:hover .add {
+            background-image: url(ic_add_white_18px.svg);
+        }
+        button:hover .remove {
+            background-image: url(ic_remove_white_18px.svg);
+        }
+        button:hover .up {
+            background-image: url(ic_keyboard_arrow_up_black_18px.svg);
+        }
+        button:hover .down {
+            background-image: url(ic_keyboard_arrow_down_black_18px.svg);
+        }
+
 
         .list-box {
             height: 100px;
@@ -48,10 +85,10 @@
             <div>ソース</div>
             <div id="sceneList" class="list-box"></div>
             <div>
-                <button id="btnAddSrc"><img src="ic_add_white_18px.svg"></button>
-                <button id="btnRemoveSrc"><img src="ic_remove_white_18px.svg"></button>
-                <button id="btnUpSrc"><img src="ic_keyboard_arrow_up_white_18px.svg"></button>
-                <button id="btnDownSrc"><img src="ic_keyboard_arrow_down_white_18px.svg"></button>
+                <button id="btnAddSrc" class="add"></button>
+                <button id="btnRemoveSrc" class="remove"></button>
+                <button id="btnUpSrc" class="up"></button>
+                <button id="btnDownSrc" class="down"></button>
             </div>
         </div>
         <div class="list-container">
